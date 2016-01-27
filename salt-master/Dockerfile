@@ -13,5 +13,5 @@ RUN sudo apt-get install wget
 # install salt master
 RUN sudo apt-get install -y salt-master
 
-# restart salt minion
+# restart salt master
 CMD sudo restart salt-master
