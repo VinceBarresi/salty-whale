@@ -1,0 +1,13 @@
+master:
+ build: salt-master
+ volumes: 
+ - ./salt-master/conf/listen_to_all.conf:/srv/salt/master.d
+ - ./salt-master/conf/master_name.conf:/srv/salt/master.d
+ - ./salt-master/conf/auto_accept_keys.conf:/srv/salt/master.d
+
+minion:
+ build: salt-minion
+ volumes:
+ - ./salt-minion/conf/master_hostname.conf:/srv/salt/minion.d
+ links:
+ - master
